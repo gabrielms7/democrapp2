@@ -1,0 +1,40 @@
+.registered-user-container {
+  text-align: center;
+}
+
+.election-card {
+  width: 500px;
+}
+
+/**
+  * Para más información sobre las 2 clases que se muestran a continuación, leer:
+  * Align material icon with text on Materialize
+  * https://stackoverflow.com/questions/39907145/align-material-icon-with-text-on-materialize
+  *
+  * También leer: https://developers.google.com/fonts/
+  */
+
+.material-icons-outlined {
+  display: inline-flex;
+  vertical-align: bottom;
+  font-size: 18px;
+}
+
+.action {
+  font-size:20px;
+  line-height:18px;
+}
+
+/*******************************************************************************************/
+
+/**
+ * La siguiente regla de estilo elimina el espacio en blanco correspondiente al 'mat-card-header-text'
+ * que aparece al lado izquierdo del 'mat-card-header'.
+ */
+::ng-deep .mat-card-header-text {
+  /*
+   * How do you deal with div with mat-card-header-text in an material2 card?
+   * https://stackoverflow.com/questions/43479557/how-do-you-deal-with-div-with-mat-card-header-text-in-an-material2-card
+   */
+  margin: 0px !important; /* for example to remove the margin */
+}

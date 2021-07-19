@@ -1,0 +1,35 @@
+<section>
+  <!-- Reactive Form -->
+  <form [formGroup]="loginForm" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input
+        id="email"
+        formControlName="email"
+        matInput
+        type="email"
+        placeholder="Correo electrónico">
+      <mat-error *ngIf="!loginForm.get('email')?.valid && loginForm.get('email')?.touched">
+        <mat-error *ngIf="loginForm.get('email')?.errors?.required">
+          Este campo es requerido.
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('email')?.errors?.email">
+          El correo electrónico no es válido.
+        </mat-error>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        id="password"
+        formControlName="password"
+        matInput
+        type="password"
+        placeholder="Contraseña">
+      <mat-error *ngIf="loginForm.get('password')?.touched">
+        Este campo es requerido.
+      </mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">
+      Ingresar
+    </button>
+  </form>
+</section>

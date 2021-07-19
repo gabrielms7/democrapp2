@@ -6,7 +6,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false, // Cambio el valor a false para evitar el problema del método canActivate de la clase AuthGuard.
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
@@ -19,7 +19,9 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "strictPropertyInitialization": false, // Adiciono esta línea para quitar la restricción de inicialización de objetos.
+    "strictNullChecks": false // Adiciono esta línea para quitar la restricción de retorno del tipo null.
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

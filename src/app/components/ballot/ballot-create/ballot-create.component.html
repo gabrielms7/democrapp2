@@ -1,0 +1,17 @@
+<div class="ballot-create-container">
+  <h1 fxLayout fxLayoutAlign="center">Tarjetón</h1>
+  <!-- Reactive Form -->
+  <form [formGroup]="ballotCreateForm" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input
+        id="ballot_name"
+        formControlName="ballot_name"
+        matInput
+        type="text"
+        placeholder="Nombre">
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [disabled]="ballotCreateForm.invalid">
+      Guardar
+    </button>
+  </form>
+</div>

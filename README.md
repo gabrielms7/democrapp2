@@ -25,3 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Utilidades
+
+Angular Material - Ver información de instalación y configuración en: https://material.angular.io/
+FlexLayout - Ver información de instalación y configuración en: https://github.com/angular/flex-layout
+rxjs-compat - Ejecutar el siguiente comando: npm install --save rxjs-compat
+MomentJS - Ver información de instalación y configuración en: https://momentjs.com/
+MatMomentDateModule - Ver información de instalación y configuración en: https://www.npmjs.com/package/@angular/material-moment-adapter
+
+## Otros
+
+Mirar cambios en el archivo de configuración 'tsconfig.json'
+
+"# democrapp2" 

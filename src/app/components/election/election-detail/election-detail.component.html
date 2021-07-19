@@ -1,0 +1,15 @@
+<!--
+  Para una descripción más detallada del pipe 'async' leer el siguiente artículo:
+  5 sencillos tips and tricks cuando usas async pipe en angular
+  https://wilderperozo.medium.com/5-sencillos-tips-and-tricks-cuando-usas-async-pipe-en-angular-fa4580000694
+ -->
+<div class="election-detail-container" *ngIf="election$ | async as election" fxLayout="column" fxLayoutAlign="center center">
+
+  <h1>Jornada Electoral</h1>
+
+  <span>{{ election.name }}</span>
+  <span>{{ election.date | date:"dd-MM-yyyy" }}</span>
+
+  <a mat-button routerLink="/ballot-create">Crear Tarjetón</a>
+
+</div>

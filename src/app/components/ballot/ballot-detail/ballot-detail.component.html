@@ -1,0 +1,14 @@
+<!--
+  Para una descripción más detallada del pipe 'async' leer el siguiente artículo:
+  5 sencillos tips and tricks cuando usas async pipe en angular
+  https://wilderperozo.medium.com/5-sencillos-tips-and-tricks-cuando-usas-async-pipe-en-angular-fa4580000694
+ -->
+ <div class="ballot-detail-container" *ngIf="ballot$ | async as ballot" fxLayout="column" fxLayoutAlign="center center">
+
+  <h1>Tarjetón</h1>
+
+  <span>{{ ballot.name }}</span>
+
+  <a mat-button routerLink="/candidate-create">Crear Candidato</a>
+
+</div>
