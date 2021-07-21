@@ -1,31 +1,11 @@
 .registered-user-container {
-  text-align: center;
+  margin-top: 16px;
 }
 
 .election-card {
-  width: 500px;
+  width: 400px;
+  /*height: 700px;*/
 }
-
-/**
-  * Para más información sobre las 2 clases que se muestran a continuación, leer:
-  * Align material icon with text on Materialize
-  * https://stackoverflow.com/questions/39907145/align-material-icon-with-text-on-materialize
-  *
-  * También leer: https://developers.google.com/fonts/
-  */
-
-.material-icons-outlined {
-  display: inline-flex;
-  vertical-align: bottom;
-  font-size: 18px;
-}
-
-.action {
-  font-size:20px;
-  line-height:18px;
-}
-
-/*******************************************************************************************/
 
 /**
  * La siguiente regla de estilo elimina el espacio en blanco correspondiente al 'mat-card-header-text'

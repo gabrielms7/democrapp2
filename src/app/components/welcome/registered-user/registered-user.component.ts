@@ -11,6 +11,7 @@ import { ElectionService } from 'src/app/services/election.service';
 export class RegisteredUserComponent implements OnInit {
 
   electionList: Election[];
+  list = Array.from(Array(10).keys());
 
   constructor(private electionService: ElectionService) { }
 

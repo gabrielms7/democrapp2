@@ -14,10 +14,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+
+import { ScrollingModule } from "@angular/cdk/scrolling";
 
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
-import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 
 // Averiguar que significa cada una de estas constantes en MomentJS
 export const MY_FORMATS = {
@@ -48,6 +50,7 @@ export const MY_FORMATS = {
     MatDatepickerModule,
     MatTableModule,
     MatDividerModule,
+    ScrollingModule,
     MatMomentDateModule
   ],
   exports: [
@@ -65,6 +68,7 @@ export const MY_FORMATS = {
     MatDatepickerModule,
     MatTableModule,
     MatDividerModule,
+    ScrollingModule,
     MatMomentDateModule
   ],
   providers: [
