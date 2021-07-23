@@ -1,3 +1,8 @@
+.election-create-container {
+  margin-top: 32px;
+  width: 400px;
+}
+
 mat-form-field {
   width: 300px;
 }

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
+
 import { Election } from 'src/app/model/election.model';
 import { ElectionService } from 'src/app/services/election.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-election-list',
@@ -10,23 +13,20 @@ import { ElectionService } from 'src/app/services/election.service';
 })
 export class ElectionListComponent implements OnInit {
 
-  /**
-   * En esta variable se almacenan los nombres de las columnas que se
-   * muestran en la tabla de la plantilla correspondiente a este componente.
-   */
-  displayedColumns: string[] = [ 'name', 'date', 'options' ];
-  /**
-   * En este array se almacenan objetos de tipo 'Election'.
-   */
-  electionList$: Observable<Election[]>;
+  elections$: Observable<Election[]>;
 
-  constructor(private electionService: ElectionService) { }
+  constructor(private electionService: ElectionService, private dialog: MatDialog, private router: Router) { }
 
-  /**
-   * En este método se carga el array que contiene objetos de tipo 'Election'.
-   */
   ngOnInit(): void {
-    this.electionList$ = this.electionService.getElectionList();
+    this.elections$ = this.electionService.getElectionList();
+  }
+
+  /**
+   * Redirecciona a la página de detalle de elección.
+   * @param election objeto de tipo 'Election' seleccionado de la lista.
+   */
+  onSelect(election: Election): void {
+    this.router.navigate(['/election-detail', election.id]);
   }
 
 }

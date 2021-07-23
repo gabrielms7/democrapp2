@@ -1,20 +1,4 @@
 .registered-user-container {
-  margin-top: 16px;
-}
-
-.election-card {
+  margin-top: 32px;
   width: 400px;
-  /*height: 700px;*/
-}
-
-/**
- * La siguiente regla de estilo elimina el espacio en blanco correspondiente al 'mat-card-header-text'
- * que aparece al lado izquierdo del 'mat-card-header'.
- */
-::ng-deep .mat-card-header-text {
-  /*
-   * How do you deal with div with mat-card-header-text in an material2 card?
-   * https://stackoverflow.com/questions/43479557/how-do-you-deal-with-div-with-mat-card-header-text-in-an-material2-card
-   */
-  margin: 0px !important; /* for example to remove the margin */
 }

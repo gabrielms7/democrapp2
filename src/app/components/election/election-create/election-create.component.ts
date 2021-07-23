@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ElectionService } from 'src/app/services/election.service';
-import { ElectionCreateDialogComponent } from '../../dialogs/election-create-dialog.component';
+import { ConfirmDialogComponent } from '../../dialogs/confirm-dialog.component';
 
 @Component({
   selector: 'app-election-create',
@@ -37,11 +37,10 @@ export class ElectionCreateComponent implements OnInit {
    */
   onSubmit() {
     // Mostrar el diálogo de confirmación para la creación de la jornada electoral.
-    const dialogRef = this.dialog.open(ElectionCreateDialogComponent, {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       // En la variable 'data' se pasa información para mostrar en la ventana de diálogo.
       data: {
-        election_name: this.electionCreateForm.value.election_name,
-        election_date: this.electionCreateForm.value.election_date
+        message: 'Va a crear una nueva Jornada Electoral.'
       }
     });
     // Lo que pasa cuando se cierra la ventana de diálogo.

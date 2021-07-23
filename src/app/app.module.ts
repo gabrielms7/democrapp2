@@ -8,6 +8,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+
 // Componentes
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/auth/login/login.component';
@@ -25,15 +28,24 @@ import { HeaderComponent } from './components/navigation/header/header.component
 import { SidenavListComponent } from './components/navigation/sidenav-list/sidenav-list.component';
 import { RegisteredUserComponent } from './components/welcome/registered-user/registered-user.component';
 import { UnregisteredUserComponent } from './components/welcome/unregistered-user/unregistered-user.component';
-import { BallotCreateDialogComponent } from './components/dialogs/ballot-create-dialog.component';
-import { ElectionCreateDialogComponent } from './components/dialogs/election-create-dialog.component';
-import { CandidateCreateDialogComponent } from './components/dialogs/candidate-create-dialog.component';
+import { ConfirmDialogComponent } from './components/dialogs/confirm-dialog.component';
 
 // Servicios
 import { AuthService } from './services/auth.service';
 import { BallotService } from './services/ballot.service';
 import { CandidateService } from './services/candidate.service';
 import { ElectionService } from './services/election.service';
+
+// En el siguiente artículo de stackoverflow se muestra un ejemplo para cambiar
+// el idioma de la fecha utilizando un data pipe:
+// ¿Como cambiar lenguaje de fecha Data pipe Angular 6?
+// https://es.stackoverflow.com/questions/194958/como-cambiar-lenguaje-de-fecha-data-pipe-angular-6
+
+// Locales
+import localeEsCo from '@angular/common/locales/es-CO';
+
+// Registrar los locales con el nombre que se quiere utilizar a la hora de proveer.
+registerLocaleData(localeEsCo, 'es-Co');
 
 @NgModule({
   declarations: [
@@ -53,9 +65,7 @@ import { ElectionService } from './services/election.service';
     SidenavListComponent,
     RegisteredUserComponent,
     UnregisteredUserComponent,
-    BallotCreateDialogComponent,
-    ElectionCreateDialogComponent,
-    CandidateCreateDialogComponent
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +80,8 @@ import { ElectionService } from './services/election.service';
     AuthService,
     BallotService,
     CandidateService,
-    ElectionService
+    ElectionService,
+    { provide: LOCALE_ID, useValue: 'es-Co' }
   ],
   bootstrap: [AppComponent]
 })

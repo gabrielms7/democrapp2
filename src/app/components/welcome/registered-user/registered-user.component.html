@@ -1,31 +1,4 @@
-<div fxFlex fxLayout="column" fxLayoutAlign="center center" class="registered-user-container">
-  <mat-card class="election-card">
-    <mat-card-header>
-      <div fxFlex>
-        <h1>Jornadas Electorales</h1>
-        <div fxFlex fxLayoutAlign="end">
-          <button style="margin-right: 22px;" mat-icon-button>
-            <mat-icon>add_circle_outline</mat-icon>
-            Crear
-          </button>
-        </div>
-      </div>
-    </mat-card-header>
-    <mat-divider></mat-divider>
-    <mat-card-content>
-      <mat-list>
-        <!--
-          Tech: Implement Virtual Scrolling with MatList in Angular
-          https://medium.datadriveninvestor.com/implement-virtual-scrolling-with-matlist-in-angular-c900dc0d489f
-        -->
-        <cdk-virtual-scroll-viewport [itemSize]="10" style="height: 400px;">
-          <mat-list-item *cdkVirtualFor="let item of list">
-            <mat-icon mat-list-icon>how_to_vote</mat-icon>
-            <div mat-line>Elecciones 2021</div>
-            <div mat-line>{{ item }}</div>
-          </mat-list-item>
-        </cdk-virtual-scroll-viewport>
-      </mat-list>
-    </mat-card-content>
-  </mat-card>
+<div class="registered-user-container" fxFlex fxLayout="column" fxLayoutAlign="center center">
+  <a mat-button color="accent" routerLink="/election-create">Crear Jornada Electoral</a>
+  <a mat-button color="accent" routerLink="/election-list">Ver Jornadas Electorales</a>
 </div>

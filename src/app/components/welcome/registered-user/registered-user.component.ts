@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from "rxjs";
-import { Election } from 'src/app/model/election.model';
-import { ElectionService } from 'src/app/services/election.service';
 
 @Component({
   selector: 'app-registered-user',
@@ -10,13 +7,9 @@ import { ElectionService } from 'src/app/services/election.service';
 })
 export class RegisteredUserComponent implements OnInit {
 
-  electionList: Election[];
-  list = Array.from(Array(10).keys());
-
-  constructor(private electionService: ElectionService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.electionList = this.electionService.electionList;
   }
 
 }
